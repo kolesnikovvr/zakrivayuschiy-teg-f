@@ -17,4 +17,21 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: var(--bg-image-light);
+}
+
+/* Прописывается margin для элементов от 769 px */
+.container {
+  width: 100%;
+  background-color: white;
+  margin-top: clamp(7.5rem, 7.148rem + 1.502vw, 8.5rem) auto;
+}
+
+.header {
+  margin-top: 102px;
+
+  margin: 0 clamp(0rem, -26.646rem + 55.44vw, 23.25rem);
 }
