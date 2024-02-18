@@ -15,23 +15,163 @@
 */
 
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
+  background-image: var(--bg-image-light);
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
-  background-image: var(--bg-image-light);
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
+  margin: 0 clamp(0rem, -26.646rem + 55.44vw, 23.25rem);
+  font-family: Inter, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 /* Прописывается margin для элементов от 769 px */
-.container {
-  width: 100%;
-  background-color: white;
-  margin-top: clamp(7.5rem, 7.148rem + 1.502vw, 8.5rem) auto;
-}
 
 .header {
   margin-top: 102px;
-
-  margin: 0 clamp(0rem, -26.646rem + 55.44vw, 23.25rem);
+  margin-bottom: 104px;
 }
+
+.header__container {
+  display: flex;
+  flex-direction: column;
+  padding-top: clamp(7.5rem, 7.148rem + 1.502vw, 8.5rem);
+  padding-bottom: 25px;
+  background-color: white;
+}
+
+.header__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+  font-family: "PressStart2P";
+  text-transform: uppercase;
+}
+
+.header__title-html {
+  font-size: clamp(3.063rem, 2.697rem + 1.561vw, 4.063rem);
+}
+
+.header__title-html::before {
+  content: "</";
+}
+
+.header__title-html::after {
+  content: ">";
+}
+
+.header__title-text {
+  font-size: clamp(0.75rem, 0.498rem + 1.073vw, 1.438rem);
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.theme-menu__item {
+  height: 14px;
+}
+
+.theme-menu__button {
+  border: none;
+  padding: 0;
+  font-family: "PressStart2P";
+  line-height: 100%;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 54px;
+}
+
+.main__container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.main__title-container {
+  border: 2px solid rgb(0, 0, 0);
+}
+
+.main__title {
+  padding: 5px 10px 5px 10px;
+  font-weight: 700;
+}
+
+.image-container {
+  border-bottom: 2px solid rgb(0, 0, 0);
+  border-left: 2px solid rgb(0, 0, 0);
+  border-right: 2px solid rgb(0, 0, 0);
+  border-top: 1px solid rgb(0, 0, 0);
+}
+
+.main__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.main__text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  border: 2px solid rgb(0, 0, 0);
+  padding: 25px;
+}
+
+.main__text-container .main__text:nth-child(2) {
+  margin-top: 2px;
+}
+
+.button__container {
+  align-self: self-end;
+}
+
+.like {
+  margin: auto;
+  padding: 0;
+  /* width: 130px; */
+  /* height: 38px; */
+  padding: 11px 35px;
+  background-color: transparent;
+  border: 2px solid rgb(0, 0, 0);
+  font-family: "PressStart2P";
+  font-size: 14px;
+  line-height: 90%;
+}
+
+<svg width="27.000000" height="24.000000" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+	<defs/>
+	<path id="Vector" d="M3 0L6 0L6 3L3 3L3 0Z" fill="#000000" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<path id="Vector" d="M6 0L9 0L9 3L6 3L6 0Z" fill="#000000" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<path id="Vector" d="M0 3L3 3L3 6L0 6L0 3Z" fill="#000000" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<path id="Vector" d="M0 6L3 6L3 9L0 9L0 6Z" fill="#000000" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<path id="Vector" d="M0 9L3 9L3 12L0 12L0 9Z" fill="#000000" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<path id="Vector" d="M9 0L12 0L12 3L9 3L9 0Z" fill="#000000" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<path id="Vector" d="M3 12L6 12L6 15L3 15L3 12Z" fill="#000000" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<path id="Vector" d="M6 15L9 15L9 18L6 18L6 15Z" fill="#000000" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<path id="Vector" d="M9 18L12 18L12 21L9 21L9 18Z" fill="#000000" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<path id="Vector" d="M24 0L21 0L21 3L24 3L24 0Z" fill="#000000" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<path id="Vector" d="M21 0L18 0L18 3L21 3L21 0Z" fill="#000000" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<path id="Vector" d="M27 3L24 3L24 6L27 6L27 3Z" fill="#000000" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<path id="Vector" d="M27 6L24 6L24 9L27 9L27 6Z" fill="#000000" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<path id="Vector" d="M27 9L24 9L24 12L27 12L27 9Z" fill="#000000" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<path id="Vector" d="M18 0L15 0L15 3L18 3L18 0Z" fill="#000000" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<path id="Vector" d="M24 12L21 12L21 15L24 15L24 12Z" fill="#000000" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<path id="Vector" d="M21 15L18 15L18 18L21 18L21 15Z" fill="#000000" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<path id="Vector" d="M18 18L15 18L15 21L18 21L18 18Z" fill="#000000" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<path id="Vector" d="M12 3L15 3L15 6L12 6L12 3Z" fill="#000000" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<path id="Vector" d="M12 21L15 21L15 24L12 24L12 21Z" fill="#000000" fill-opacity="1.000000" fill-rule="evenodd"/>
+</svg>

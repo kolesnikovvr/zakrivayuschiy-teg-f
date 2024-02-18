@@ -14,7 +14,11 @@
   </head>
   <body class="page">
     <header class="header">
-      <div class="container">
+      <div class="header__container">
+        <h1 class="header__title">
+          <span class="header__title-html">HTML</span>
+          <span class="header__title-text">закрывающий тег</span>
+        </h1>
         <nav class="theme-menu header__theme-menu">
           <!-- Не меняйте разметку этого списка, иначе скрипты перестанут работать -->
           <ul class="theme-menu__list">
@@ -50,8 +54,30 @@
         </nav>
       </div>
     </header>
-    <main>
-      <div class="container"></div>
+    <main class="main">
+      <section class="main__container">
+        <div class="main__title-container">
+          <h2 class="main__title">
+            Фритрек и нулевой спринт: Подготовка к работе
+          </h2>
+        </div>
+        <div class="image-container">
+          <img class="main__image" src="/images/image (2).png" />
+        </div>
+        <div class="main__text-container">
+          <p class="main__text">
+            Это было самое начало пути. На этом этапе важно было проникнуться
+            основами и настроиться на учёбу. И, возможно, подумать, как новые
+            знания могут повлиять на ваше будущее.
+          </p>
+          <p class="main__text">
+            Место для ваших воспоминаний о начале обучения.
+          </p>
+          <div class="button__container">
+            <button class="like">Like</button>
+          </div>
+        </div>
+      </section>
     </main>
     <script src="./scripts/like.js"></script>
   </body>
