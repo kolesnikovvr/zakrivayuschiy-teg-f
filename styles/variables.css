@@ -1,4 +1,8 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-  --bg-image-light: url(../svg/background\ .svg);
+  --background-image: url(../svg/background-light.svg);
+  --wght-title: 700;
+  --background-color: rgb(255, 255, 255);
+  --font-color: rgb(0, 0, 0);
+  --font-color-disabled: rgb(0, 0, 0, 0.6);
 }

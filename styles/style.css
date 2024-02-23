@@ -15,17 +15,16 @@
 */
 
 .page {
-  background-image: var(--bg-image-light);
+  margin: 0 clamp(0rem, -26.646rem + 55.44vw, 23.25rem);
+  color: var(--font-color);
+  font-family: "Inter-Variable", sans-serif;
+  font-size: 18px;
+  background-image: var(--background-image);
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  margin: 0 clamp(0rem, -26.646rem + 55.44vw, 23.25rem);
-  font-family: "Inter-Variable", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  color: black;
 }
 
 /* Прописывается margin для элементов от 769 px */
@@ -33,6 +32,7 @@
 .header {
   margin-top: 102px;
   margin-bottom: 104px;
+  border: 2px solid var(--font-color);
 }
 
 .header__container {
@@ -40,7 +40,7 @@
   flex-direction: column;
   padding-top: clamp(7.5rem, 7.148rem + 1.502vw, 8.5rem);
   padding-bottom: 25px;
-  background-color: white;
+  background-color: var(--background-color);
 }
 
 .header__title {
@@ -69,24 +69,41 @@
   font-size: clamp(0.75rem, 0.498rem + 1.073vw, 1.438rem);
 }
 
+.theme-menu {
+  margin: 0 auto;
+}
+
 .theme-menu__list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 14px;
 }
 
 .theme-menu__item {
+  font-family: "PressStart2P";
+  font-size: 14px;
+  line-height: 100%;
   height: 14px;
+}
+
+.theme-menu__item:not(:nth-last-child(1)) {
+  margin-bottom: 14px;
 }
 
 .theme-menu__button {
   border: none;
   padding: 0;
-  font-family: "PressStart2P";
-  line-height: 100%;
   text-transform: uppercase;
   background-color: transparent;
+}
+
+.theme-menu__button:disabled {
+  position: relative;
+  opacity: 0.6;
+}
+
+.theme-menu__button:disabled::before {
+  position: absolute;
+  content: "▶";
+  left: -20px;
 }
 
 .main {
@@ -98,25 +115,26 @@
 .main__container {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: var(--background-color);
 }
 
 .main__title-container {
-  border: 2px solid rgb(0, 0, 0);
+  border: 2px solid var(--font-color);
 }
 
 .main__title {
+  padding: 5px 10px 5px 10px;
+  /* font-variation-settings: 'wght' var(--wght-title); */
+  font-weight: var(--wght-title);
   font-size: 18px;
   line-height: 22px;
-  padding: 5px 10px 5px 10px;
-  font-weight: 700;
 }
 
 .image-container {
-  border-bottom: 2px solid rgb(0, 0, 0);
-  border-left: 2px solid rgb(0, 0, 0);
-  border-right: 2px solid rgb(0, 0, 0);
-  border-top: 1px solid rgb(0, 0, 0);
+  border-top: 1px solid var(--font-color);
+  border-right: 2px solid var(--font-color);
+  border-bottom: 2px solid var(--font-color);
+  border-left: 2px solid var(--font-color);
 }
 
 .main__image {
@@ -129,7 +147,7 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
-  border: 2px solid rgb(0, 0, 0);
+  border: 2px solid var(--font-color);
   padding: 25px;
   font-size: 18px;
   line-height: 21px;
@@ -143,15 +161,58 @@
   align-self: self-end;
 }
 
-.like {
+.card__icon-button {
+  border: none;
+  background-color: transparent;
+}
+
+.like-icon {
+}
+
+.card__like-button {
   margin: auto;
+  border: 2px solid var(--font-color);
   padding: 0;
   /* width: 130px; */
   /* height: 38px; */
   padding: 11px 35px;
-  background-color: transparent;
-  border: 2px solid rgb(0, 0, 0);
   font-family: "PressStart2P";
   font-size: 14px;
   line-height: 90%;
+  background-color: transparent;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  gap: 8px;
+  box-sizing: content-box;
+  margin-top: 54px;
+  margin-right: clamp(2rem, -1.257rem + 13.897vw, 11.25rem);
+  margin-bottom: clamp(6.25rem, 6.184rem + 0.282vw, 6.438rem);
+  margin-left: clamp(2.063rem, -1.195rem + 13.897vw, 11.313rem);
+  border: 2px solid var(--font-color);
+  padding: 15px 18px;
+  background-color: var(--background-color);
+  @media (width < 376px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.footer__save {
+  display: block;
+  align-self: center;
+  font-family: "PressStart2P";
+  font-size: 14px;
+  line-height: 90%;
+}
+
+.floppy__container {
+  display: block;
+  width: 21px;
+  @media (width < 376px) {
+    width: 28px;
+  }
 }
