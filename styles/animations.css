@@ -125,7 +125,7 @@
 
 /*ANIMATION CLICK-scale*/
 
-.is-liked .heart {
+.like-icon.is-liked .heart {
   transform-origin: center;
   animation: scaleHeart 0.3s ease-in 0.1s; /* Анимация увеличения сердца */
 }
@@ -144,11 +144,15 @@
 
 /*ANIMATION CLICK-sparcs*/
 
-.is-liked .sparks {
-  animation: sparks 0.3s eaFse-in 0.3s;
+.sparks {
+  opacity: 0;
 }
 
-@keyframes sparks {
+.like-icon.is-liked .sparks {
+  animation: spark 0.3s ease-in 0.3s;
+}
+
+@keyframes spark {
   0% {
     opacity: 0;
   }
