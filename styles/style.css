@@ -135,15 +135,6 @@
   animation: arrow-move 0.5s ease-in-out infinite alternate;
 }
 
-@keyframes arrow-move {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(4px);
-  }
-}
-
 .main {
   display: flex;
   flex-direction: column;
@@ -196,123 +187,95 @@
 }
 
 .button__container {
-  align-self: self-end;
   display: flex;
+  align-self: self-end;
 }
 
 .card__icon-button {
-  border: none;
-  background-color: transparent;
-  padding: 0;
   justify-self: center;
   align-self: center;
   margin-right: 12px;
+  border: none;
+  padding: 0;
+  background-color: transparent;
 }
 
 .like-icon {
   display: block;
 }
 
-/*HOVER heart*/
-
-.card__icon-button .like-icon .core {
-  transition: fill 0.3s linear; /* Плавное изменение цвета сердцевины при наведении */
-}
-
-.card__icon-button:hover .like-icon .core {
-  fill: var(--font-color); /* Изменение цвета сердцевины при наведении */
-}
-
-.card__icon-button:not(:hover) .like-icon .core {
-  transition-delay: 0.03s; /*Задержка, когда курсор убирается*/
-}
-
-.card__icon-button .like-icon .main-body {
-  transition: fill 0.3s ease 0.05s; /* Плавное изменение цвета основного тела при наведении */
-}
-
-.card__icon-button:not(:hover) .like-icon .main-body {
-  transition-delay: 0s; /*Отмена задержки, когда курсор убирается*/
-}
-
-.card__icon-button:hover .like-icon .main-body {
-  fill: var(--font-color); /* Изменение цвета основного тела при наведении */
-}
-
-.card__icon-button .like-icon .sparks {
-  fill: var(--background-color);
+.like-icon .sparks {
+  opacity: 0;
 }
 
 .card__like-button {
-  overflow: hidden;
   position: relative;
-  border: 2px solid var(--font-color);
-  padding: 0;
   width: 169px;
   height: 38px;
+  border: 2px solid var(--font-color);
+  padding: 0;
   padding: auto;
+  overflow: hidden;
   font-family: "PressStart2P";
   font-size: 14px;
   line-height: 90%;
   background-color: var(--background-color);
 }
 
-.card__like-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background-color: var(--font-color);
-  transition: 0.3s ease-in-out;
-  z-index: 0;
-}
-
-.card__like-button:hover::before {
-  transform: translateX(100%);
-}
-
-.card__like-button:hover span {
-  color: var(--background-color);
-}
-
-.card__like-button:focus {
-  outline: none;
-  box-shadow: 2px 2px var(--font-color);
-}
-
-.card__like-button span {
-  position: relative;
-  z-index: 1;
-  transition: 0.3s ease-in-out;
-}
-
 .dialog {
-  padding: 0;
-  /* margin: 0; */
-  width: clamp(21.313rem, 20.96rem + 1.502vw, 22.313rem);
-  height: clamp(12.188rem, 12.232rem + -0.188vw, 12.063rem);
+  width: 353px;
+  height: 191px;
   border: 2px solid var(--font-color);
+  padding: 0;
   background-color: var(--background-color);
+  @media (width < 769px) {
+    width: 341px;
+  }
+}
+
+.dialog__container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: 30px;
+  @media (width < 769px) {
+    margin: 30px 40px;
+  }
+}
+
+.dialog::backdrop {
+  opacity: 0.6;
+  background-color: black;
 }
 
 .dialog__title {
+  display: flex;
+  gap: 20px;
+  font-family: "PressStart2P";
+  font-size: 14px;
+  line-height: 21px;
+  text-align: left;
+}
+
+.dialog__span {
+  display: block;
 }
 
 .dialog__svg {
+  flex-shrink: 0;
   width: 39px;
 }
 
 .dialog__button {
-  background-color: transparent;
-  border: 2px solid var(--font-color);
+  width: 100%;
+  border: none;
+  padding-block: 10px;
+  outline: 2px solid var(--font-color);
   color: var(--font-color);
   font-family: "PressStart2P";
   font-size: 14px;
   text-transform: uppercase;
-  width: 100%;
-  padding-block: 10px;
+  background-color: transparent;
 }
 
 .footer {
@@ -320,13 +283,12 @@
   margin-top: 50px;
   margin-bottom: clamp(6.25rem, 6.184rem + 0.282vw, 6.438rem);
   margin-inline: auto;
-  border: 2px solid var(--font-color);
   @media (width < 759px) {
     margin-top: 52px;
   }
 }
 
-.footer__container {
+.footer__button {
   display: flex;
   flex-direction: row;
   gap: 8px;
@@ -335,6 +297,7 @@
   @media (width < 769px) {
     flex-direction: column;
     align-items: center;
+    border: 2px solid var(--font-color);
   }
 }
 

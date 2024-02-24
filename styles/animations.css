@@ -12,3 +12,152 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+/* ANIMATION arrow */
+
+@keyframes arrow-move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(4px);
+  }
+}
+
+/*HOVER Like*/
+
+.card__like-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--font-color);
+  transition: 0.3s ease-in-out;
+}
+
+.card__like-button:hover::before {
+  transform: translateX(100%);
+}
+
+.card__like-button:hover span {
+  color: var(--background-color);
+}
+
+.card__like-button:focus {
+  box-shadow: 2px 2px var(--font-color);
+  outline: none;
+}
+
+.card__like-button span {
+  position: relative;
+  z-index: 1;
+  transition: 0.3s ease-in-out;
+}
+
+/*HOVER heart*/
+
+.card__icon-button .like-icon .core {
+  transition: fill 0.3s linear; /* Указание изменения цвета сердцевины  */
+}
+
+.card__icon-button .like-icon .main-body {
+  transition: fill 0.3s ease 0.05s; /* Указание изменения цвета основного тела сердца */
+}
+
+.card__icon-button:hover .like-icon:not(.is-liked) .core {
+  fill: var(--font-color); /* Изменение цвета сердцевины при наведении */
+}
+
+.card__icon-button:not(:hover) .like-icon .core {
+  transition-delay: 0.03s; /*Задержка, когда курсор убирается*/
+}
+
+.card__icon-button:hover .like-icon:not(.is-liked) .main-body {
+  fill: var(--font-color); /* Изменение цвета основного тела при наведении */
+}
+
+.card__icon-button:not(:hover) .like-icon .main-body {
+  transition-delay: 0s; /*Отмена задержки, когда курсор убирается*/
+}
+
+/*ACTIVE heart*/
+
+.card__icon-button:active .like-icon .core {
+  fill: var(--red-heart); /* Изменение цвета сердцевины при нажатии */
+}
+
+.card__icon-button:not(:active) .like-icon .core {
+  transition-delay: 0.03s; /*Задержка, когда отпускается кнопка*/
+}
+
+.card__icon-button:active .like-icon .main-body {
+  fill: var(--red-heart); /* Изменение цвета основного тела при нажатии */
+}
+
+.card__icon-button:not(:active) .like-icon .main-body {
+  transition-delay: 0s; /*Отмена задержки, когда отпускается кнопка*/
+}
+
+/*ANIMATION CLICK*/
+
+.like-icon.is-liked .core {
+  fill: var(--red-heart); /* Изменение цвета сердцевины при is-liked */
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--red-heart); /* Изменение цвета основного тела при is-liked */
+}
+
+.card__icon-button .like-icon .contour {
+  transition: fill 0.24s ease 0.06s; /* Указание изменения цвета контура сердца */
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--red-heart); /* Изменение цвета контура при is-liked */
+}
+
+.like-icon:not(.is-liked) .contour {
+  transition: fill 0.1s linear; /* Обратное изменение цвета контура */
+}
+
+/*ANIMATION CLICK-scale*/
+
+.is-liked .heart {
+  transform-origin: center;
+  animation: scaleHeart 0.3s ease-in 0.1s; /* Анимация увеличения сердца */
+}
+
+@keyframes scaleHeart {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*ANIMATION CLICK-sparcs*/
+
+.is-liked .sparks {
+  animation: sparks 0.3s eaFse-in 0.3s;
+}
+
+@keyframes sparks {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
