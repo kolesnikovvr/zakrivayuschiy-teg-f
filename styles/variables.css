@@ -1,6 +1,7 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
   --wght-title: 700;
+  --wght-main: 400;
   --background-color: rgb(255, 255, 255);
   --font-color: rgb(0, 0, 0);
   --bg-image: repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px),
