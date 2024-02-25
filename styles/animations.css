@@ -26,7 +26,12 @@
 
 /*HOVER Like*/
 
-.card__like-button::before {
+.button-common {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-common::before {
   content: "";
   position: absolute;
   top: 0;
@@ -38,15 +43,15 @@
   transition: 0.3s ease-in-out;
 }
 
-.card__like-button:hover::before {
+.button-common:hover::before {
   transform: translateX(100%);
 }
 
-.card__like-button:hover span {
+.button-common:hover span {
   color: var(--background-color);
 }
 
-.card__like-button:focus {
+.button-common:focus {
   box-shadow: 2px 2px var(--font-color);
   outline: none;
 }

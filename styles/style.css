@@ -17,7 +17,6 @@
 .page {
   margin: 0 clamp(0rem, -26.646rem + 55.44vw, 23.25rem);
   color: var(--font-color);
-  font-family: "Inter-Variable", sans-serif;
   font-size: 18px;
   background-image: var(--bg-image);
   background-position: center center;
@@ -29,8 +28,8 @@
 }
 
 @supports (font-variation-settings: normal) {
-  body {
-    font-family: "Inter-Variable", sans-serif;
+  .page {
+    font-family: "Inter", sans-serif;
   }
 }
 
@@ -60,15 +59,15 @@
   text-transform: uppercase;
 }
 
-.header__title-html {
+.header__title-void-link {
   font-size: clamp(3.063rem, 2.697rem + 1.561vw, 4.063rem);
 }
 
-.header__title-html::before {
+.header__title-void-link::before {
   content: "</";
 }
 
-.header__title-html::after {
+.header__title-void-link::after {
   content: ">";
 }
 
@@ -155,10 +154,10 @@
 }
 
 .main__title-container {
-  border: 2px solid var(--font-color);
 }
 
 .main__title {
+  border: 2px solid var(--font-color);
   padding: 5px 10px 5px 10px;
   font-variation-settings: "wght" var(--wght-title);
   font-size: 18px;
@@ -166,13 +165,13 @@
 }
 
 .image-container {
+}
+
+.main__image {
   border-top: 1px solid var(--font-color);
   border-right: 2px solid var(--font-color);
   border-bottom: 2px solid var(--font-color);
   border-left: 2px solid var(--font-color);
-}
-
-.main__image {
   display: block;
   width: 100%;
   height: 100%;
@@ -180,35 +179,35 @@
   aspect-ratio: 1/1;
 }
 
-.image-start {
+.image-contrast {
   filter: contrast(70%);
 }
 
-.image-lego {
+.image-blur {
   filter: blur(0.2rem);
 }
 
-.image-sea {
+.image-opacity {
   filter: opacity(0.8);
 }
 
-.image-study {
+.image-sepia {
   filter: sepia(15%) contrast(80%);
 }
 
-.image-wife {
+.image-saturate-138 {
   filter: saturate(138%);
 }
 
-.image-water {
+.image-saturate-108 {
   filter: saturate(108%);
 }
 
-.image-future {
+.image-grayscale {
   filter: grayscale(0.6);
 }
 
-.image-cofee {
+.image-sepia {
   filter: sepia(60%);
 }
 
@@ -353,14 +352,10 @@
   line-height: 90%;
 }
 
-.floppy__container {
+.floppy {
   display: block;
   width: 21px;
   @media (width < 376px) {
     width: 28px;
   }
-}
-
-button:hover {
-  cursor: pointer;
 }
