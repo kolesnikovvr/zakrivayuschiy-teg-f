@@ -24,138 +24,75 @@
   }
 }
 
-/*HOVER Like*/
-
-.button-common {
-  position: relative;
-  overflow: hidden;
-  font-family: "PressStart2P", sans-serif;
-  line-height: 90%;
-  background-color: var(--background-color);
-  font-size: 14px;
-}
-
-.button-common:focus-visible {
-  box-shadow: 2px 2px var(--font-color);
-}
-
-.button-common:focus {
-  outline: none;
-}
-
-.button-common::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--font-color);
-  transition: 0.3s ease-in-out;
-}
-
-.button-common:hover::before {
-  transform: translateX(100%);
-}
-
-.button-common:hover span,
-.button-common:hover .floppy {
-  color: var(--background-color);
-}
-
-.button-common span,
-.floppy {
-  position: relative;
-  z-index: 1;
-  transition: 0.3s ease-in-out;
-}
-
-/*HOVER heart*/
-
-.card__icon-button .like-icon .core {
-  transition: fill 0.3s linear; /* Указание изменения цвета сердцевины  */
-}
-
-.card__icon-button .like-icon .main-body {
-  transition: fill 0.3s ease 0.05s; /* Указание изменения цвета основного тела сердца */
-}
-
-.card__icon-button:hover .like-icon:not(.is-liked) .core {
-  fill: var(--font-color); /* Изменение цвета сердцевины при наведении */
-}
-
-.card__icon-button:not(:hover) .like-icon .core {
-  transition-delay: 0.03s; /*Задержка, когда курсор убирается*/
-}
-
-.card__icon-button:hover .like-icon:not(.is-liked) .main-body {
-  fill: var(--font-color); /* Изменение цвета основного тела при наведении */
-}
-
-.card__icon-button:not(:hover) .like-icon .main-body {
-  transition-delay: 0s; /*Отмена задержки, когда курсор убирается*/
-}
-
-/*ACTIVE heart*/
-
-.card__icon-button:active .like-icon .core {
-  fill: var(--red-heart); /* Изменение цвета сердцевины при нажатии */
-}
-
-.card__icon-button:not(:active) .like-icon .core {
-  transition-delay: 0.03s; /*Задержка, когда отпускается кнопка*/
-}
-
-.card__icon-button:active .like-icon .main-body {
-  fill: var(--red-heart); /* Изменение цвета основного тела при нажатии */
-}
-
-.card__icon-button:not(:active) .like-icon .main-body {
-  transition-delay: 0s; /*Отмена задержки, когда отпускается кнопка*/
-}
-
-/*ANIMATION CLICK*/
 .like-icon {
   display: block;
 }
 
+/*HOVER heart*/
+
+.core {
+  transition: fill 0.3s linear 0.03s; /* при отведении курсора  */
+}
+
+.main-body {
+  transition: fill 0.3s linear; /* при отведении курсора  */
+}
+
+.like-icon:hover .core {
+  fill: var(--font-color); /* Изменение цвета сердцевины при наведении */
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--font-color); /* Изменение цвета основного тела при наведении */
+  transition: fill 0.3s linear 0.05s;
+}
+
+/*ACTIVE heart*/
+
+.like-icon:active .core {
+  fill: var(--red-heart); /* Изменение цвета сердцевины при нажатии */
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--red-heart); /* Изменение цвета основного тела при нажатии */
+  transition: fill 0.3s linear 0.05s;
+}
+
+/*ANIMATION CLICK*/
+
+.contour {
+  transition: fill 0.1s linear; /* Обратное изменения цвета контура сердца */
+}
+
 .like-icon.is-liked .core {
   fill: var(--red-heart); /* Изменение цвета сердцевины при is-liked */
+  transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .main-body {
   fill: var(--red-heart); /* Изменение цвета основного тела при is-liked */
+  transition: fill 0.3s 0.05s linear;
 }
-
-.card__icon-button .like-icon .contour {
-  transition: fill 0.24s ease 0.06s; /* Указание изменения цвета контура сердца */
-}
-
 .like-icon.is-liked .contour {
   fill: var(--red-heart); /* Изменение цвета контура при is-liked */
-}
-
-.like-icon:not(.is-liked) .contour {
-  transition: fill 0.1s linear; /* Обратное изменение цвета контура */
+  transition: fill 0.3s 0.06s linear;
 }
 
 /*ANIMATION CLICK-scale*/
 
 .like-icon.is-liked .heart {
   transform-origin: center;
-  animation: scaleHeart 0.3s ease-in 0.1s; /* Анимация увеличения сердца */
+  animation: scaleHeart 0.3s ease-in 0.1s alternate; /* Анимация увеличения сердца */
 }
 
 @keyframes scaleHeart {
   0% {
     transform: scale(1);
   }
-  50% {
-    transform: scale(1.5);
-  }
   100% {
-    transform: scale(1);
+    transform: scale(1.5);
   }
 }
 
@@ -166,7 +103,7 @@
 }
 
 .like-icon.is-liked .sparks {
-  animation: spark 0.3s ease-in 0.3s;
+  animation: spark 0.3s ease-in 0.3s alternate;
 }
 
 @keyframes spark {
@@ -174,11 +111,7 @@
     opacity: 0;
   }
 
-  50% {
-    opacity: 1;
-  }
-
   100% {
-    opacity: 0;
+    opacity: 1;
   }
 }

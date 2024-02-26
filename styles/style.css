@@ -16,7 +16,7 @@
 
 .page {
   max-width: 700px;
-  margin: 0 auto;
+  margin-inline: clamp(0rem, -8.1426rem + 34.7418vw, 23.125rem);
   color: var(--font-color);
   font-size: 18px;
   background-image: var(--bg-image);
@@ -26,15 +26,11 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-variation-settings: var(--wght-main);
-}
-
-@supports (font-variation-settings: normal) {
-  .page {
-    font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif;
+  @media (width > 1440px) {
+    margin: 0 auto;
   }
 }
-
-/* Прописывается margin для элементов от 769 px */
 
 .header {
   margin: 100px 0;
@@ -61,6 +57,9 @@
 
 .header__title-void-link {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  @media (width < 375px) {
+    font-size: clamp(2.75rem, -0.2857rem + 14.2857vw, 3.0625rem);
+  }
 }
 
 .header__title-void-link::before {
@@ -72,7 +71,7 @@
 }
 
 .header__title-text {
-  font-size: clamp(0.75rem, 0.498rem + 1.073vw, 1.438rem);
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
 .theme-menu {
@@ -80,6 +79,9 @@
 }
 
 .theme-menu__list {
+  margin-left: 17px;
+  display: flex;
+  flex-direction: column;
   gap: 14px;
 }
 
@@ -87,10 +89,6 @@
   font-family: "PressStart2P", fantasy;
   font-size: 14px;
   line-height: 100%;
-}
-
-.theme-menu__item:not(:nth-last-child(1)) {
-  margin-bottom: 14px;
 }
 
 .theme-menu__button {
@@ -241,6 +239,7 @@
   border: none;
   padding: 0;
   outline: 2px solid var(--background-color);
+  outline-offset: -1px;
   background-color: transparent;
   transition: outline 0.3s ease;
 }
@@ -252,9 +251,58 @@
 .card__like-button {
   width: 130px;
   border: none;
-  padding: 12.5px 0;
-  outline: solid var(--font-color);
+  padding: 10.5px 0;
   background-color: var(--background-color);
+}
+
+/*HOVER Like*/
+
+.button-common {
+  border: solid 2px var(--font-color);
+  position: relative;
+  overflow: hidden;
+  font-family: "PressStart2P", sans-serif;
+  line-height: 90%;
+  background-color: transparent;
+  font-size: 14px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.button-common::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--font-color);
+  transition: 0.5s ease-in-out;
+}
+
+.button-common:hover::before {
+  transform: translateX(100%);
+}
+
+.button-common:hover span,
+.button-common:hover .floppy {
+  color: var(--background-color);
+}
+
+.button-common span,
+.floppy {
+  position: relative;
+  z-index: 1;
+  color: var(--mix-blend);
+  mix-blend-mode: difference;
+}
+
+.button-common:focus-visible {
+  box-shadow: 2px 2px var(--font-color);
+}
+
+.button-common:focus {
+  outline: none;
 }
 
 .card__like-button:focus-visible {
@@ -272,7 +320,6 @@
   flex-direction: row;
   gap: 8px;
   width: 335px;
-  border: 2px solid var(--font-color);
   padding: 15px;
   @media (width <= 375px) {
     flex-direction: column;
@@ -332,7 +379,6 @@
 
 .dialog__button {
   width: 100%;
-  border: 2px solid var(--font-color);
   padding: 12.5px 0;
   color: var(--font-color);
 }
