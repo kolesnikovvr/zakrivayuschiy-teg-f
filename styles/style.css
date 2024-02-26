@@ -241,13 +241,8 @@
   border: none;
   padding: 0;
   outline: 2px solid var(--background-color);
-  outline-offset: 0px;
   background-color: transparent;
   transition: outline 0.3s ease;
-}
-
-.card__icon-button:focus {
-  outline-color: var(--font-color);
 }
 
 .card__icon-button:focus-visible {
@@ -260,7 +255,10 @@
   padding: 12.5px 0;
   outline: solid var(--font-color);
   background-color: var(--background-color);
-  background-color: var(--background-color);
+}
+
+.card__like-button:focus-visible {
+  outline: solid var(--font-color);
 }
 
 .section__dialog {

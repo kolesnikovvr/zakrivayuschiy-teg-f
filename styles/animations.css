@@ -35,6 +35,14 @@
   font-size: 14px;
 }
 
+.button-common:focus-visible {
+  box-shadow: 2px 2px var(--font-color);
+}
+
+.button-common:focus {
+  outline: none;
+}
+
 .button-common::before {
   content: "";
   position: absolute;
@@ -54,11 +62,6 @@
 .button-common:hover span,
 .button-common:hover .floppy {
   color: var(--background-color);
-}
-
-.button-common:focus {
-  box-shadow: 2px 2px var(--font-color);
-  outline: none;
 }
 
 .button-common span,
