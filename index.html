@@ -111,7 +111,7 @@
                 />
               </svg>
             </button>
-            <button class="card__like-button button-common" type="button">
+            <button class="button-common card__like-button" type="button">
               <span class="button__text">Like</span>
             </button>
           </div>
@@ -532,35 +532,37 @@
           </div>
         </div>
       </section>
+
+      <section class="section__dialog">
+        <button
+          class="section__dialog__button button-common"
+          type="button"
+          onclick="window['dialog-id'].showModal()"
+          aria-controls="dialog-id"
+        >
+          <svg viewBox="0 0 21 21" class="floppy">
+            <use xlink:href="./svg/floppy.svg#floppy" />
+          </svg>
+          <span class="section__dialog__save">Сохранить на память</span>
+        </button>
+      </section>
       <dialog id="dialog-id" class="dialog">
         <div class="dialog__container">
           <div class="dialog__title">
             <svg class="dialog__svg" viewBox="0 0 39 39">
               <use xlink:href="./svg/floppy.svg#floppy" />
             </svg>
-            <span class="dialog__span">Вставьте дискету, чтобы продолжить</span>
+            <span>Вставьте дискету, чтобы продолжить</span>
           </div>
           <form method="dialog">
             <button class="dialog__button button-common" type="submit">
-              ок
+              <span> ок</span>
             </button>
           </form>
         </div>
       </dialog>
     </main>
-    <footer class="footer">
-      <button
-        class="footer__button button-common"
-        type="button"
-        onclick="window['dialog-id'].showModal()"
-        aria-controls="dialog-id"
-      >
-        <svg viewBox="0 0 21 21" class="floppy">
-          <use xlink:href="./svg/floppy.svg#floppy" />
-        </svg>
-        <span class="footer__save">Сохранить на память</span>
-      </button>
-    </footer>
+
     <script src="./scripts/like.js"></script>
   </body>
 </html>

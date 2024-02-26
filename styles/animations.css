@@ -29,6 +29,10 @@
 .button-common {
   position: relative;
   overflow: hidden;
+  font-family: "PressStart2P", sans-serif;
+  line-height: 90%;
+  background-color: var(--background-color);
+  font-size: 14px;
 }
 
 .button-common::before {
@@ -47,7 +51,8 @@
   transform: translateX(100%);
 }
 
-.button-common:hover span {
+.button-common:hover span,
+.button-common:hover .floppy {
   color: var(--background-color);
 }
 
@@ -56,7 +61,8 @@
   outline: none;
 }
 
-.card__like-button span {
+.button-common span,
+.floppy {
   position: relative;
   z-index: 1;
   transition: 0.3s ease-in-out;
@@ -107,6 +113,9 @@
 }
 
 /*ANIMATION CLICK*/
+.like-icon {
+  display: block;
+}
 
 .like-icon.is-liked .core {
   fill: var(--red-heart); /* Изменение цвета сердцевины при is-liked */
