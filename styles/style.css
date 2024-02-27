@@ -18,6 +18,7 @@
   max-width: 700px;
   margin-inline: clamp(0rem, -8.1426rem + 34.7418vw, 23.125rem);
   color: var(--font-color);
+  font-family: "Inter", sans-serif;
   font-size: 18px;
   background-image: var(--bg-image);
   background-position: center center;
@@ -26,7 +27,6 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-variation-settings: var(--wght-main);
-  font-family: "Inter", sans-serif;
   @media (width > 1440px) {
     margin: 0 auto;
   }
@@ -35,6 +35,9 @@
 .header {
   margin: 100px 0;
   border: 2px solid var(--font-color);
+  @media (width <= 375px) {
+    margin: 102px 0;
+  }
 }
 
 .header__container {
@@ -79,10 +82,10 @@
 }
 
 .theme-menu__list {
-  margin-left: 17px;
   display: flex;
   flex-direction: column;
   gap: 14px;
+  margin-left: 17px;
 }
 
 .theme-menu__item {
@@ -93,6 +96,7 @@
 
 .theme-menu__button {
   position: relative;
+  display: flex;
   border: none;
   padding: 0;
   opacity: 1;
@@ -155,21 +159,36 @@
   background-color: var(--background-color);
 }
 
-.main__title-container {
+.image__container {
+  position: relative;
 }
 
-.main__title {
-  border: 2px solid var(--font-color);
-  padding: 5px 10px 5px 10px;
-  font-size: 18px;
-  line-height: 22px;
-  font-variation-settings: "wght" var(--wght-title);
+.label {
+  position: absolute;
+  top: 25px;
+  right: 28px;
+  z-index: 3;
+  opacity: 0.5;
+  color: var(--font-color);
+  font-family: "PressStart2P", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  mix-blend-mode: hard-light;
+  @media (width <= 375px) {
+    right: 13px;
+  }
 }
 
-.image-container {
+@supports ((text-stroke: 1px white) or (-webkit-text-stroke: 1px white;)) {
+  .label {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke: white;
+  }
 }
 
 .main__image {
+  position: relative;
   display: block;
   width: 100%;
   height: 100%;
@@ -213,6 +232,14 @@
   filter: sepia(60%);
 }
 
+.main__title {
+  border: 2px solid var(--font-color);
+  padding: 4px 10px;
+  font-size: 18px;
+  line-height: 22px;
+  font-variation-settings: "wght" var(--wght-title);
+}
+
 .main__text-container {
   display: flex;
   flex-direction: column;
@@ -221,6 +248,9 @@
   padding: 25px;
   font-size: 18px;
   line-height: 21px;
+  @media (width < 376px) {
+    padding-right: 30px;
+  }
 }
 
 .main__text-container .main__text:nth-child(2) {
@@ -235,17 +265,13 @@
 .card__icon-button {
   justify-self: center;
   align-self: center;
-  margin-right: 12px;
+  margin-right: 7px;
   border: none;
   padding: 0;
   outline: 2px solid var(--background-color);
   outline-offset: -1px;
   background-color: transparent;
   transition: outline 0.3s ease;
-}
-
-.card__icon-button:focus-visible {
-  outline-color: var(--font-color);
 }
 
 .card__like-button {
@@ -255,16 +281,20 @@
   background-color: var(--background-color);
 }
 
+.card__like-button:focus {
+  outline: none;
+}
+
 /*HOVER Like*/
 
 .button-common {
-  border: solid 2px var(--font-color);
   position: relative;
+  border: solid 2px var(--font-color);
   overflow: hidden;
   font-family: "PressStart2P", sans-serif;
-  line-height: 90%;
-  background-color: transparent;
   font-size: 14px;
+  line-height: 90%;
+  background-color: var(--background-color);
   transition: box-shadow 0.3s ease-in-out;
 }
 
@@ -286,7 +316,7 @@
 
 .button-common:hover span,
 .button-common:hover .floppy {
-  color: var(--background-color);
+  color: var(--mix-blend);
 }
 
 .button-common span,
@@ -334,13 +364,14 @@
 }
 
 .dialog {
-  width: 353px;
+  width: 357px;
+  max-width: calc(100% - 34px);
   border: 2px solid var(--font-color);
-  padding: 0;
+  padding: 30px;
   color: var(--font-color);
   background-color: var(--background-color);
   @media (width <= 375px) {
-    width: 341px;
+    padding: 30px 40px;
   }
 }
 
@@ -348,10 +379,6 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  margin: 30px;
-  @media (width < 769px) {
-    margin: 30px 40px;
-  }
 }
 
 .dialog::backdrop {
@@ -379,7 +406,7 @@
 
 .dialog__button {
   width: 100%;
-  padding: 12.5px 0;
+  padding: 11px 0;
   color: var(--font-color);
 }
 
