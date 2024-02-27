@@ -35,7 +35,7 @@
 .header {
   margin: 100px 0;
   border: 2px solid var(--font-color);
-  @media (width <= 375px) {
+  @media (width < 376px) {
     margin: 102px 0;
   }
 }
@@ -60,7 +60,7 @@
 
 .header__title-void-link {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
-  @media (width < 375px) {
+  @media (width < 376px) {
     font-size: clamp(2.75rem, -0.2857rem + 14.2857vw, 3.0625rem);
   }
 }
@@ -96,7 +96,6 @@
 
 .theme-menu__button {
   position: relative;
-  display: flex;
   border: none;
   padding: 0;
   opacity: 1;
@@ -108,21 +107,24 @@
 }
 
 .theme-menu__button::after {
+  position: absolute;
   content: "";
   display: block;
   width: 0%;
   height: 2px;
   margin-top: 2px;
   background-color: var(--font-color);
-  transition: width 0.3s;
+  transition: width 0.3s ease;
 }
 
 .theme-menu__button:focus-visible::after {
   width: 100%;
+  transition: width 0.3s ease;
 }
 
 .theme-menu__button:hover {
   opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button:disabled {
@@ -175,12 +177,12 @@
   text-transform: uppercase;
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
   mix-blend-mode: hard-light;
-  @media (width <= 375px) {
+  @media (width < 376px) {
     right: 13px;
   }
 }
 
-@supports ((text-stroke: 1px white) or (-webkit-text-stroke: 1px white;)) {
+@supports (-webkit-text-stroke: 1px white) {
   .label {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke: white;
@@ -204,8 +206,8 @@
   filter: contrast(70%);
 }
 
-.image-blur {
-  filter: blur(0.2rem);
+.image-hue-rotate {
+  filter: hue-rotate(15deg);
 }
 
 .image-opacity {
@@ -271,6 +273,10 @@
   outline: 2px solid var(--background-color);
   outline-offset: -1px;
   background-color: transparent;
+}
+
+.card__icon-button:focus-visible {
+  outline-color: var(--font-color);
   transition: outline 0.3s ease;
 }
 
@@ -295,7 +301,6 @@
   font-size: 14px;
   line-height: 90%;
   background-color: var(--background-color);
-  transition: box-shadow 0.3s ease-in-out;
 }
 
 .button-common::before {
@@ -329,14 +334,11 @@
 
 .button-common:focus-visible {
   box-shadow: 2px 2px var(--font-color);
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .button-common:focus {
   outline: none;
-}
-
-.card__like-button:focus-visible {
-  outline: solid var(--font-color);
 }
 
 .section__dialog {
@@ -351,7 +353,7 @@
   gap: 8px;
   width: 335px;
   padding: 15px;
-  @media (width <= 375px) {
+  @media (width < 376px) {
     flex-direction: column;
     align-items: center;
     width: 306px;
@@ -370,7 +372,7 @@
   padding: 30px;
   color: var(--font-color);
   background-color: var(--background-color);
-  @media (width <= 375px) {
+  @media (width < 376px) {
     padding: 30px 40px;
   }
 }
