@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./styles/themes.css" />
     <meta name="color-scheme" content="light dark" />
     <link rel="icon" href="./images/favicon.ico" sizes="any" />
-    <link rel="icon" href="./svg/floppy.svg" type="image/svg+xml" />
+    <link rel="icon" href="./svg/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="./images/favicon-apple.png" />
     <script src="./scripts/set-theme.js"></script>
   </head>
@@ -569,7 +569,9 @@
           <svg viewBox="0 0 21 21" class="floppy">
             <use xlink:href="./svg/floppy.svg#floppy" />
           </svg>
-          <span class="section__dialog__save">Сохранить на память</span>
+          <span class="section__dialog__save button__text"
+            >Сохранить на память</span
+          >
         </button>
       </section>
       <dialog id="dialog-id" class="dialog">
@@ -578,11 +580,11 @@
             <svg class="dialog__svg" viewBox="0 0 39 39">
               <use xlink:href="./svg/floppy.svg#floppy" />
             </svg>
-            <span>Вставьте дискету, чтобы продолжить</span>
+            <p>Вставьте дискету, чтобы продолжить</p>
           </div>
           <form method="dialog">
             <button class="dialog__button button-common" type="submit">
-              <span> ок</span>
+              <span class="button__text"> ок</span>
             </button>
           </form>
         </div>

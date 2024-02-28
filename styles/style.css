@@ -115,6 +115,8 @@
   margin-top: 2px;
   background-color: var(--font-color);
   transition: width 0.3s ease;
+  inset-block-start: 12px;
+  inset-inline-start: 0;
 }
 
 .theme-menu__button:focus-visible::after {
@@ -124,7 +126,6 @@
 
 .theme-menu__button:hover {
   opacity: 0.6;
-  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button:disabled {
@@ -186,6 +187,7 @@
   .label {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke: white;
+    text-shadow: none;
   }
 }
 
@@ -246,9 +248,6 @@
   padding: 25px;
   font-size: 18px;
   line-height: 21px;
-  @media (width < 376px) {
-    padding-right: 30px;
-  }
 }
 
 .main__text-container .main__text:nth-child(2) {
@@ -274,17 +273,6 @@
 .card__icon-button:focus-visible {
   outline-color: var(--font-color);
   transition: outline 0.3s ease;
-}
-
-.card__like-button {
-  width: 130px;
-  border: none;
-  padding: 10.5px 0;
-  background-color: var(--background-color);
-}
-
-.card__like-button:focus {
-  outline: none;
 }
 
 /*HOVER Like*/
@@ -315,26 +303,26 @@
   transform: translateX(100%);
 }
 
-.button-common:hover span,
-.button-common:hover .floppy {
-  color: var(--mix-blend);
-}
-
-.button-common span,
+.button-common .button__text,
 .floppy {
   position: relative;
   z-index: 1;
   color: var(--mix-blend);
   mix-blend-mode: difference;
+  transition: box-shadow 0.3s ease;
 }
 
 .button-common:focus-visible {
   box-shadow: 2px 2px var(--font-color);
-  transition: box-shadow 0.3s ease-in-out;
 }
 
 .button-common:focus {
   outline: none;
+}
+
+.card__like-button {
+  width: 130px;
+  padding: 10.5px 0;
 }
 
 .section__dialog {
@@ -391,6 +379,7 @@
   font-size: 14px;
   line-height: 21px;
   text-align: left;
+  text-transform: uppercase;
 }
 
 .dialog__span {
@@ -406,6 +395,7 @@
   width: 100%;
   padding: 11px 0;
   color: var(--font-color);
+  text-transform: uppercase;
 }
 
 .floppy {
