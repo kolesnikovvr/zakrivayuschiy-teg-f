@@ -26,7 +26,7 @@
   background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-variation-settings: var(--wght-main);
+  font-variation-settings: "wght" var(--wght-main);
   @media (width > 1440px) {
     margin: 0 auto;
   }
@@ -107,8 +107,8 @@
 }
 
 .theme-menu__button::after {
-  position: absolute;
   content: "";
+  position: absolute;
   display: block;
   width: 0%;
   height: 2px;
@@ -121,7 +121,6 @@
 
 .theme-menu__button:focus-visible::after {
   width: 100%;
-  transition: width 0.3s ease;
 }
 
 .theme-menu__button:hover {
@@ -185,9 +184,9 @@
 
 @supports (-webkit-text-stroke: 1px white) {
   .label {
+    text-shadow: none;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke: white;
-    text-shadow: none;
   }
 }
 
@@ -285,6 +284,7 @@
   font-size: 14px;
   line-height: 90%;
   background-color: var(--background-color);
+  transition: box-shadow 0.3s ease;
 }
 
 .button-common::before {
@@ -309,7 +309,6 @@
   z-index: 1;
   color: var(--mix-blend);
   mix-blend-mode: difference;
-  transition: box-shadow 0.3s ease;
 }
 
 .button-common:focus-visible {
